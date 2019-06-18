@@ -1,4 +1,5 @@
 package ratam.io.Projeto1.config;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -13,13 +14,21 @@ public class DataInitilizr implements ApplicationListener<ContextRefreshedEvent>
 	@Override
 	public void onApplicationEvent(ContextRefreshedEvent event) {
 		// TODO Auto-generated method stub
-		System.out.println("entrou aqui!!!!");
-		User user = new User();
-                user.setEmail("nataniel.paiva@gmail.com");
-                user.setName("Nataniel");
-                userRepository.save(user);
-                
-                        
-	}
+            List<User> users = userRepository.findAll();
+            if (users.isEmpty()){
+                System.out.println("Registrando no banco");
+                criarUsuario("Nataniel","nataniel.paiva@gmail.com");
+                criarUsuario("Alvaro Pereira do Nascimento","alvaropereira15@gmail.com");
+                criarUsuario("Alvaro Pereira do Nascimento","alvaro.nascimentoapn@gmail.com");   
+                criarUsuario("Alvaro Pereira do Nascimento","alvaropereira14@hotmail.com");
+                System.out.println("Resgitrou tudo");
+            }
+            else System.out.println("Clientes registrados anteriormente");
+        }
+        public void criarUsuario( String nome, String email){
+            User userk;
+            userk = new User(nome, email);
+            userRepository.save(userk);
+        }
 
 }

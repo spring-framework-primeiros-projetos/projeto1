@@ -17,13 +17,25 @@ public class DataInitilizr implements ApplicationListener<ContextRefreshedEvent>
             List<User> users = userRepository.findAll();
             if (users.isEmpty()){
                 System.out.println("Registrando no banco");
-                criarUsuario("Nataniel","nataniel.paiva@gmail.com");
+                criarUsuario("Nataniel Paiva","nataniel.paiva@gmail.com");
                 criarUsuario("Alvaro Pereira do Nascimento","alvaropereira15@gmail.com");
                 criarUsuario("Alvaro Pereira do Nascimento","alvaro.nascimentoapn@gmail.com");   
                 criarUsuario("Alvaro Pereira do Nascimento","alvaropereira14@hotmail.com");
                 System.out.println("Resgitrou tudo");
             }
             else System.out.println("Clientes registrados anteriormente");
+////            Busca informação no banco
+//              User user = userRepository.getOne(2L);
+//              System.out.println(user.getName());
+//            
+//              //ação tomada para editar o nome do nataniel
+//              user = userRepository.getOne(1L);
+//              user.setName("Nataniel Paiva");
+//              userRepository.save(user);
+//              user = userRepository.getOne(1L);
+//              System.out.println(user.getName());
+//                userRepository.deleteById(1L);
+                
         }
         public void criarUsuario( String nome, String email){
             User userk;

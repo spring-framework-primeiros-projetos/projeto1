@@ -21,6 +21,8 @@ public class DataInitilizr implements ApplicationListener<ContextRefreshedEvent>
                 criarUsuario("Alvaro Pereira do Nascimento","alvaropereira15@gmail.com");
                 criarUsuario("Alvaro Pereira do Nascimento","alvaro.nascimentoapn@gmail.com");   
                 criarUsuario("Alvaro Pereira do Nascimento","alvaropereira14@hotmail.com");
+                criarUsuario("Maria","alvaropereira14@hotmail.com");   
+                criarUsuario("João","alvaropereira14@hotmail.com");
                 System.out.println("Resgitrou tudo");
             }
             else System.out.println("Clientes registrados anteriormente");
@@ -35,6 +37,11 @@ public class DataInitilizr implements ApplicationListener<ContextRefreshedEvent>
 //              user = userRepository.getOne(1L);
 //              System.out.println(user.getName());
 //                userRepository.deleteById(1L);
+                User user = userRepository.findByName("Nataniel Paiva");
+                System.out.println(user.getName());
+                
+                User user2 = userRepository.findNameByEmail("alvaropereira15@gmail.com");
+                System.out.println(user2.getName());
                 
         }
         public void criarUsuario( String nome, String email){

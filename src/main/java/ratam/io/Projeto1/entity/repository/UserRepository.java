@@ -21,4 +21,6 @@ public interface UserRepository  extends JpaRepository<User,Long>{
     User findByQualquercoisa(String name); 
     @Query("select u from User u where u.email  like %?1%")
     User findNameByEmail(String email);
+    @Query("select u from User u  where UPPER(u.email) = UPPER(?1)")
+    User findByEmailIgnoreCase(String email);
 }

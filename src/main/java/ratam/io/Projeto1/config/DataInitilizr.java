@@ -21,8 +21,8 @@ public class DataInitilizr implements ApplicationListener<ContextRefreshedEvent>
                 criarUsuario("Alvaro Pereira do Nascimento","alvaropereira15@gmail.com");
                 criarUsuario("Alvaro Pereira do Nascimento","alvaro.nascimentoapn@gmail.com");   
                 criarUsuario("Alvaro Pereira do Nascimento","alvaropereira14@hotmail.com");
-                criarUsuario("Maria","alvaropereira14@hotmail.com");   
-                criarUsuario("João","alvaropereira14@hotmail.com");
+                criarUsuario("Maria","maria@hotmail.com");   
+                criarUsuario("João","joao@hotmail.com");
                 System.out.println("Resgitrou tudo");
             }
             else System.out.println("Clientes registrados anteriormente");

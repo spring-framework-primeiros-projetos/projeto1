@@ -5,10 +5,11 @@
  */
 package controllers;
 
-import natam.io.Projeto1.entity.repository.UserRepository;
+import ratam.io.Projeto1.entity.repository.UserRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  *
@@ -23,6 +24,7 @@ public class UserController {
         
     }
     @RequestMapping("/user")
+    @ResponseBody   
     public String getUsers (Model model){
       model.addAttribute("usersList", userRepository.findAll());
       return "user";

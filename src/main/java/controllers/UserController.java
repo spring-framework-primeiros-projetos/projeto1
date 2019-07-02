@@ -9,24 +9,29 @@ import ratam.io.Projeto1.entity.repository.UserRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import ratam.io.Projeto1.entity.User;
 
 /**
  *
  * @author Alvaro
  */
 @Controller
+
 public class UserController {
     private UserRepository userRepository;
     
     public UserController(UserRepository userRepository){
         this.userRepository = userRepository;
-        
     }
+
+    /**
+     *
+     * @param model
+     * @return String users
+     */
     @RequestMapping("/user")
-    @ResponseBody   
-    public String getUsers (Model model){
-      model.addAttribute("usersList", userRepository.findAll());
+     public String getUsers (Model model){
+         model.addAttribute("usersList", this.userRepository.findAll());
       return "user";
         
     }

@@ -1,5 +1,6 @@
 package ratam.io.Projeto1.entity;
 import javax.persistence.*;
+
 @Entity
 public class Role {
 	 @Id

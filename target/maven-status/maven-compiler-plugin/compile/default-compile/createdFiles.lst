@@ -1,4 +1,6 @@
 ratam\io\Projeto1\config\DataInitilizr.class
+controllers\UserController.class
 ratam\io\Projeto1\Projeto1Application.class
+ratam\io\Projeto1\entity\repository\UserRepository.class
 ratam\io\Projeto1\entity\Role.class
 ratam\io\Projeto1\entity\User.class

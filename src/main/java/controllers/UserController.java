@@ -9,7 +9,6 @@ import ratam.io.Projeto1.entity.repository.UserRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import ratam.io.Projeto1.entity.User;
 
 /**
  *
@@ -29,10 +28,10 @@ public class UserController {
      * @param model
      * @return String users
      */
-    @RequestMapping("/user")
+    @RequestMapping(value = "/user.html")
      public String getUsers (Model model){
-         model.addAttribute("usersList", this.userRepository.findAll());
-      return "user";
+         model.addAttribute("usersList",this.userRepository.findAll());
+      return "user.html";
         
     }
     
